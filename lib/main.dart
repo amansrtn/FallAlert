@@ -33,11 +33,10 @@ class _MyAppState extends State<MyApp> {
       num z = pow(_accelZ, 2);
       num sum = x + y + z;
       result = sqrt(sum);
-      if (result < 1 && _accelZ < 1) {
+      if ((result < 1 && _accelZ < 1) || result > 20) {
         setState(() {
           _myVariable = 1;
-          print(result);
-          print(_accelZ);
+          print("result is = $result");
         });
       }
     });
